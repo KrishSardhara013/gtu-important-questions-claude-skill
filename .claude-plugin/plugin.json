@@ -1,1 +1,6 @@
-{"name": "analyze-paper", "description": "GTU"}
+
+{
+  "name": "gtu-important-questions",
+  "version": "1.0.0",
+  "description": "Analyze GTU previous-year question papers and generate unit-wise important questions."
+}
