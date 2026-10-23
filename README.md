@@ -1,56 +1,164 @@
 
-# GTU Important Questions — Claude AI Skill
+<div align="center">
 
-A Claude AI skill for analyzing Gujarat Technological University (GTU) previous-year question papers and generating a unit-wise important questions PDF for exam preparation.
+# 🎓 GTU Important Questions
 
-## Overview
+### Claude AI Skill for Smarter Exam Preparation
 
-Students often need to review multiple previous-year question papers to identify recurring questions, understand examination patterns, and prioritize topics from their syllabus.
+Analyze GTU previous-year question papers, discover recurring questions, prioritize revision, and generate a structured important-questions PDF.
 
-**GTU Important Questions** helps automate this process using Claude AI. It analyzes uploaded question papers alongside the subject syllabus and organizes questions into a structured revision guide.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Claude%20AI-blueviolet)](https://claude.ai/)
+[![University](https://img.shields.io/badge/University-GTU-orange)](https://www.gtu.ac.in/)
+[![Status](https://img.shields.io/badge/Status-Community%20Project-success)](https://github.com/KrishSardhara013/gtu-important-questions-claude-skill)
 
-## Features
+**Less time searching. More focused revision.**
 
-- **Unit-wise classification:** Organizes questions according to the provided subject syllabus.
-- **Frequency analysis:** Identifies questions repeated across multiple examination papers.
-- **Marks tracking:** Records marks wherever they are available in the source papers.
-- **Exam session tracking:** Records the examination sessions in which questions appeared.
-- **Priority labels:** Categorizes questions using MUST DO, HIGH, MEDIUM, LOW, and NEW labels.
-- **Similar question grouping:** Groups related questions while preserving their meaning.
-- **Consolidated revision list:** Creates a focused list of important questions.
-- **PDF output:** Aims to generate a clean, print-friendly A4 PDF for revision.
-- **Question-focused analysis:** Concentrates on identifying and prioritizing questions rather than writing answers.
+[Getting Started](#-getting-started) •
+[Features](#-features) •
+[Installation](#-claude-code-plugin-installation) •
+[Contributing](#-contributing)
 
-## How It Works
+</div>
 
-1. Upload the relevant GTU Summer and Winter previous-year question papers.
-2. Upload the official syllabus for the subject.
-3. Ask Claude to analyze the documents using the `analyze-paper` skill.
-4. The skill extracts questions and maps them to syllabus units.
-5. Claude analyzes question frequency, marks, and examination sessions.
-6. Questions are grouped and prioritized according to the skill instructions.
-7. Review the analysis and use the generated PDF for revision.
+---
 
-## Priority Levels
+## 📌 Overview
 
-| Priority | Frequency guideline |
+Preparing for university examinations often means reviewing multiple previous-year question papers, comparing repeated questions, tracking marks, and mapping everything to the syllabus.
+
+**GTU Important Questions** is a Claude AI skill designed to simplify this process for students of Gujarat Technological University (GTU).
+
+Provide your subject syllabus and previous-year question papers, and use Claude to organize questions unit-wise, analyze repetition patterns, assign revision priorities, and create a consolidated PDF.
+
+> Turn scattered question papers into a structured revision guide.
+
+## ✨ Features
+
+| Feature | Description |
 |---|---|
-| MUST DO | 5 or more appearances |
-| HIGH | 3–4 appearances |
-| MEDIUM | 2 appearances |
-| LOW | 1 appearance |
-| NEW | Potentially new topic, when supported by available evidence |
+| 📚 Unit-wise Classification | Maps questions to units in the provided syllabus |
+| 🔁 Frequency Analysis | Identifies recurring questions across uploaded papers |
+| 📝 Marks Tracking | Records question marks when available |
+| 📅 Exam Session Tracking | Tracks the sessions in which questions appeared |
+| 🎯 Priority Labels | Organizes questions into revision priority categories |
+| 🔗 Similar Question Grouping | Groups related questions while preserving their meaning |
+| 📄 PDF Generation | Produces a printable revision document when supported by the environment |
+| 🎓 Exam-Focused Workflow | Focuses on question analysis rather than generating answers |
 
-The frequency thresholds above describe the intended classification rules. Check `skills/analyze-paper/SKILL.md` for the actual instructions used by the current version.
+## ⚙️ How It Works
 
-The NEW label is separate from frequency-based categories and should not be assigned without sufficient evidence.
+```text
+Upload Previous-Year Papers
+            +
+      Upload Syllabus
+            ↓
+    Claude AI Analysis
+            ↓
+   Extract and Organize
+        Questions
+            ↓
+  Map Questions to Units
+            ↓
+ Analyze Frequency and Marks
+            ↓
+  Assign Priority Labels
+            ↓
+ Consolidated Important
+       Questions PDF
+```
 
-## Repository Structure
+### Getting started
+
+1. Collect the available GTU Summer and Winter question papers for your subject.
+2. Obtain the official subject syllabus.
+3. Open Claude in an environment where the skill is available.
+4. Upload the documents and ask Claude to analyze them using `analyze-paper`.
+5. Review the unit mapping, repeated questions, and priority classifications.
+6. Generate and verify the final revision PDF.
+
+## 🎯 Priority Classification
+
+The skill is intended to organize questions using frequency-based priorities.
+
+| Priority | Intended frequency | Suggested use |
+|---|---:|---|
+| 🔴 MUST DO | 5+ appearances | Highest revision priority |
+| 🟠 HIGH | 3–4 appearances | Important recurring questions |
+| 🔵 MEDIUM | 2 appearances | Include in revision |
+| ⚪ LOW | 1 appearance | Review if time permits |
+| 🆕 NEW | Requires supporting evidence | Investigate potentially new topics |
+
+**Important:** These thresholds describe the intended classification scheme. Refer to `skills/analyze-paper/SKILL.md` for the exact rules implemented by the current version.
+
+The NEW label is separate from frequency-based priorities. A topic should only be labeled new when the available papers support that conclusion.
+
+## 🧰 Requirements
+
+- A Claude account and access to the relevant Claude skill or plugin workflow.
+- Subject syllabus in a readable document format.
+- Previous-year question papers in readable PDFs or other supported formats.
+- PDF generation capability in the selected execution environment.
+
+Scanned documents may require OCR. Check extracted questions and marks against the originals.
+
+## 🚀 Claude Code Plugin Installation
+
+This repository is intended to be distributed as a Claude Code plugin.
+
+### Prerequisites
+
+- Claude Code installed and working.
+- A public GitHub repository.
+- A valid `.claude-plugin/plugin.json`.
+- A valid `.claude-plugin/marketplace.json` configured to reference this plugin.
+
+### Step 1 — Add the marketplace
+
+Open Claude Code and enter:
+
+```text
+/plugin marketplace add KrishSardhara013/gtu-important-questions-claude-skill
+```
+
+This registers the repository as a plugin marketplace. It does not install the plugin by itself.
+
+### Step 2 — Install the plugin
+
+Enter:
+
+```text
+/plugin install gtu-important-questions@gtu-study-tools
+```
+
+The plugin name and marketplace name must match the values in your committed configuration files.
+
+### Step 3 — Activate the plugin
+
+Follow the installation prompts and select the desired installation scope. If Claude Code asks you to reload plugins, run:
+
+```text
+/reload-plugins
+```
+
+### Step 4 — Use the skill
+
+Upload your subject syllabus and question papers, then ask Claude to analyze them using the `analyze-paper` skill.
+
+**Installation note:** These commands assume the marketplace manifest and plugin metadata have been validated. If installation fails, check the marketplace name, plugin name, repository structure, and Claude Code's error message.
+
+Official documentation:
+
+- [Claude Code Plugins](https://docs.anthropic.com/en/docs/claude-code/plugins)
+- [Plugin Marketplaces](https://docs.anthropic.com/en/docs/claude-code/plugin-marketplaces)
+
+## 📁 Repository Structure
 
 ```text
 gtu-important-questions-claude-skill/
 ├── .claude-plugin/
-│   └── plugin.json
+│   ├── plugin.json
+│   └── marketplace.json
 ├── skills/
 │   └── analyze-paper/
 │       └── SKILL.md
@@ -58,57 +166,61 @@ gtu-important-questions-claude-skill/
 └── LICENSE
 ```
 
-A marketplace manifest can also be included when configuring Claude Code marketplace distribution.
+## ⚠️ Limitations
 
-## Installation and Usage
+- Results depend on the quality and completeness of the uploaded documents.
+- OCR or text extraction can introduce errors.
+- Missing marks, dates, and examination sessions should not be invented.
+- Similar questions may need manual verification before being grouped.
+- Historical frequency does not guarantee future examination questions.
+- Generated PDFs should be checked against the original source documents.
+- Actual PDF generation depends on the capabilities of the environment running Claude.
 
-### Using Claude.ai
+## 🛣️ Future Improvements
 
-1. Obtain the skill package from this repository.
-2. Follow the custom-skill import instructions available in your Claude interface.
-3. Upload the subject syllabus and relevant question papers.
-4. Ask Claude to analyze the papers and produce the important questions report.
+Potential future enhancements include:
 
-Custom-skill availability and PDF-generation capabilities depend on your Claude account and environment.
+- Better handling of scanned question papers.
+- Improved duplicate and paraphrased question detection.
+- More detailed frequency summaries by examination session.
+- Additional PDF formatting options.
+- Broader syllabus formats and support for more subjects.
 
-### Using Claude Code
+These are possible future enhancements, not promises of existing functionality.
 
-This project is designed for a Claude Code skill/plugin workflow.
+## 🤝 Contributing
 
-For marketplace installation, the repository must have a valid marketplace manifest and plugin configuration.
-
-Follow the official documentation:
-
-https://docs.anthropic.com/en/docs/claude-code/plugins
-
-## Limitations
-
-- Analysis quality depends on the completeness and readability of the uploaded documents.
-- Scanned question papers may require OCR, and extracted text should be verified.
-- Missing marks, dates, and examination sessions must not be invented.
-- Similar questions should be checked before being merged.
-- Historical question frequency does not guarantee future examination questions.
-- Always compare the final analysis with the original papers.
-- PDF output depends on the file-generation tools available in the execution environment.
-
-## Contributing
-
-Suggestions, corrections, and improvements are welcome.
+Contributions, bug reports, and suggestions are welcome.
 
 1. Fork the repository.
-2. Make your changes in a separate branch.
-3. Submit a pull request describing your improvements.
+2. Create a branch for your changes.
+3. Make your changes and test them with representative question papers.
+4. Submit a pull request describing the improvement.
 
-Please test proposed changes against representative question papers and syllabi.
+Please avoid submitting private documents or copyrighted examination papers without permission to redistribute them.
 
-## Disclaimer
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+You may use, modify, and redistribute the project subject to the terms of that license.
+
+## ⚖️ Disclaimer
 
 This is an independent, community-created educational project. It is not affiliated with, endorsed by, or officially associated with Gujarat Technological University (GTU), Anthropic, or Claude.
 
-GTU is referenced solely to describe the intended educational use case.
+GTU is mentioned only to describe the intended educational use case.
 
-This project supports exam preparation and does not guarantee examination results or predict future question papers.
+This tool is intended to support exam preparation. It does not guarantee examination results or predict future question papers.
 
-## License
+---
 
-This project is distributed under the MIT License. See the [LICENSE](LICENSE) file for details.
+<div align="center">
+
+**Built to make exam preparation more organized.**
+
+Created by [KrishSardhara013](https://github.com/KrishSardhara013)
+
+⭐ If you find this project useful, consider starring the repository!
+
+</div>
