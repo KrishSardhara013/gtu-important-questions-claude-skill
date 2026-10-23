@@ -5,13 +5,13 @@
     "name": "KrishSardhara013"
   },
   "metadata": {
-    "description": "Claude Code tools for GTU exam preparation."
+    "description": "Tools for GTU exam preparation"
   },
   "plugins": [
     {
       "name": "gtu-important-questions",
-      "source": ".",
-      "description": "Analyze GTU previous-year question papers, classify important questions unit-wise, track frequency, and prepare exam-focused PDFs."
+      "source": "./",
+      "description": "Analyze GTU previous-year question papers and generate unit-wise important questions PDFs."
     }
   ]
 }
